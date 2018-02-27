@@ -1,14 +1,7 @@
-sudo: false
 language: java
-services:
-- docker
+jdk: oraclejdk8
+install: true
+script: ./mvn clean install
 cache:
   directories:
-  - "$HOME/.cache"
-
-deploy:
-  provider: script
-  script: "mvn deploy"
-  skip_cleanup: true
-  on:
-    tags: true
+  - $HOME/.m2
